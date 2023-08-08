@@ -8,6 +8,14 @@ const breadAmount = document.getElementById('breadAmount');
 const chickenAmount = document.getElementById('chickenAmount');
 const total = document.getElementById('totalAmount');
 
+function setZoom() {
+    if (window.matchMedia('(min-width: 1020px) and (max-width: 1440px)').matches) {
+      document.body.style.zoom = "67%";
+    } else {
+      document.body.style.zoom = "100%";
+    }
+  }
+
 const setFocus = (inputBox) => {
     inputBox.focus();
 }
@@ -41,6 +49,9 @@ const reset = () => {
     chickenAmount.textContent = '$0.00';
     total.textContent = '$0.00'
 }
+
+setZoom();
+window.addEventListener('resize', setZoom);
 
 document.getElementById('pizza-pic').addEventListener('click',()=>{ setFocus(pizzaQ) });
 document.getElementById('burger-pic').addEventListener('click',()=>{ setFocus(burgerQ) });
