@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Navaneethan" >
+        <meta name="describtion" content="This website is used to calculate total amount of bill on a breakfast restaurent" >
+        <link rel="icon" href="asserts/pizza.jpg" >
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <script src="app.js" type="text/javascript" defer></script>
+        <title>Namma Makka</title>
+    </head>
+    <body>
+        <header>
+            <h1 id="title">namma makka's tiffans</h1>
+        </header>
+        <main>
+            <section class="images" id="images">
+                <img src="asserts/pizza.jpg" alt="pizza" title="pizza" width="100px" height="100px" id="pizza-pic">
+                <img src="asserts/burger.jpg" alt="burger" title="burger" width="100px" height="100px" id="burger-pic">
+                <img src="asserts/cornbread.jpg" alt="cornbread" title="cornbread" width="100px" height="100px" id="cornbread-pic">
+                <img src="asserts/hot_chicken.jpg" alt="hot_chicken" title="hot_chicken" width="100px" height="100px" id="hot_chicken-pic">
+            </section>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Items</th>
+                        <th>Rate</th>
+                        <th>quantity</th>
+                        <th>amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr></tr>
+                    <tr>
+                        <td>pizza</td>
+                        <td>$12.55</td>
+                        <td><input type="number" size="2" name="pizzaQ" id="pizzaQ" placeholder="eg: 3"></td>
+                        <td id="pizzaAmount">$0.00</td>
+                    </tr>
+                    <tr>
+                        <td>burger</td>
+                        <td>$15.33</td>
+                        <td><input type="number" size="2" name="burgerQ" id="burgerQ" placeholder="eg: 2"></td>
+                        <td id="burgerAmount">$0.00</td>
+                    </tr>
+                    <tr>
+                        <td>corn bread</td>
+                        <td>$8.88</td>
+                        <td><input type="number" size="2" name="breadQ" id="breadQ" placeholder="eg: 1"></td>
+                        <td id="breadAmount">$0.00</td>
+                    </tr>
+                    <tr>
+                        <td>hot chicken</td>
+                        <td>$10.00</td>
+                        <td><input type="number" size="2" name="chickenQ" id="chickenQ" placeholder="eg: 3"></td>
+                        <td id="chickenAmount">$0.00</td>
+                    </tr>
+                    <tr>
+                        <td><button type="button" onclick="reset()">confirm</button></td>
+                        <td colspan="2">total :</td>
+                        <td id="totalAmount">$0.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </body>
+</html>
