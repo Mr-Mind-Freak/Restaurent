@@ -9,7 +9,7 @@ const chickenAmount = document.getElementById('chickenAmount');
 const total = document.getElementById('totalAmount');
 
 function setZoom() {
-    if (window.matchMedia('(min-width: 1020px) and (max-width: 1440px)').matches) {
+    if (window.matchMedia('(min-width: 1020px)').matches) {
       document.body.style.zoom = "67%";
     } else {
       document.body.style.zoom = "100%";
