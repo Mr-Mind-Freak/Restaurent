@@ -1,68 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="author" content="Navaneethan" >
-        <meta name="describtion" content="This website is used to calculate total amount of bill on a breakfast restaurent" >
-        <link rel="icon" href="asserts/pizza.jpg" >
-        <link rel="stylesheet" href="style.css" type="text/css">
-        <script src="app.js" type="text/javascript" defer></script>
-        <title>Namma Makka</title>
-    </head>
-    <body>
-        <header>
-            <h1 id="title">namma makka's tiffans</h1>
-        </header>
-        <main>
-            <section class="images" id="images">
-                <img src="asserts/pizza.jpg" alt="pizza" title="pizza" width="100px" height="100px" id="pizza-pic">
-                <img src="asserts/burger.jpg" alt="burger" title="burger" width="100px" height="100px" id="burger-pic">
-                <img src="asserts/cornbread.jpg" alt="cornbread" title="cornbread" width="100px" height="100px" id="cornbread-pic">
-                <img src="asserts/hot_chicken.jpg" alt="hot_chicken" title="hot_chicken" width="100px" height="100px" id="hot_chicken-pic">
-            </section>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Items</th>
-                        <th>Rate</th>
-                        <th>quantity</th>
-                        <th>amount</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr></tr>
-                    <tr>
-                        <td>pizza</td>
-                        <td>$12.55</td>
-                        <td><input type="number" size="2" name="pizzaQ" id="pizzaQ" placeholder="eg: 3"></td>
-                        <td id="pizzaAmount">$0.00</td>
-                    </tr>
-                    <tr>
-                        <td>burger</td>
-                        <td>$15.33</td>
-                        <td><input type="number" size="2" name="burgerQ" id="burgerQ" placeholder="eg: 2"></td>
-                        <td id="burgerAmount">$0.00</td>
-                    </tr>
-                    <tr>
-                        <td>corn bread</td>
-                        <td>$8.88</td>
-                        <td><input type="number" size="2" name="breadQ" id="breadQ" placeholder="eg: 1"></td>
-                        <td id="breadAmount">$0.00</td>
-                    </tr>
-                    <tr>
-                        <td>hot chicken</td>
-                        <td>$10.00</td>
-                        <td><input type="number" size="2" name="chickenQ" id="chickenQ" placeholder="eg: 3"></td>
-                        <td id="chickenAmount">$0.00</td>
-                    </tr>
-                    <tr>
-                        <td><button type="button" onclick="reset()">confirm</button></td>
-                        <td colspan="2">total :</td>
-                        <td id="totalAmount">$0.00</td>
-                    </tr>
-                </tbody>
-            </table>
-        </main>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/home_page/chef_icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style/homePage.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">  <!-- scroll event link -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.5/dist/lenis.min.js"></script>  <!-- lenis scroll -->
+    <script src="app.js" defer></script>
+    <title>Food tuck</title>
+</head>
+<body class="container homePage">
+  <script>
+    AOS.init();
+  </script>
+    <header class="row mt-3">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand text-capitalize text-light foodTuck" href="#"> <span>food</span> tuck </a>
+          <button class="navbar-toggler navButton" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end g-5" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active text-capitalize text-light" aria-current="page" href="#home" onclick="navClick(event)">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-capitalize text-light" href="#menu" onclick="navClick(event)"> menu </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-capitalize text-light" href="#blog" onclick="navClick(event)"> blog </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-capitalize text-light" href="#about" onclick="navClick(event)"> about </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-capitalize text-light" href="#footer" onclick="navClick(event)"> FAQ </a>
+              </li>
+              <li class="nav-item">
+                <img src="assets/Handbag.png"  alt="cart" class="nav-link">
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <section class="row mt-3 g-3 align-items-center hero" id="home">
+      <div class="col-12 col-md-6 ps-4">
+        <p class="styleText"> it's quick & amusing! </p>
+        <h1> <span> the </span> art of speed food quality </h1>
+        <p class="my-4">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Varius sed pharetra dictum neque massa congue 
+        </p>
+        <a href="" class="text-decoration-none linkButton"> see menu </a>     
+      </div>
+      <div class="col-12 col-md-6">
+        <img src="assets/home_page/hero.png" alt="food" class="w-100 img-fluid">
+      </div>
+    </section>
+    <section class="row mt-3 g-3" id="about">
+      <div class="col-12 col-md-6 aboutUs" data-aos="fade-right">
+        <p class="styleText"> about us </p>
+        <h2 class="text-capitalize bigText"> <span> we </span> create the best foody product </h2>
+        <p class="mt-3">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, elit augue urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.
+        </p>
+        <div>
+          <p> <span>&#10004;</span>  Lacus nisi, et ac dapibus sit eu velit in consequat.</p>
+          <p> <span>&#10004;</span>  Quisque diam pellentesque bibendum non dui volutpat fringilla </p>
+          <p> <span>&#10004;</span>  Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+        </div>
+        <a href="" class="text-decoration-none mt-2 linkButton"> read more </a>
+      </div>
+      <div class="col-12 col-md-6" data-aos="fade-left">
+        <div class="container">
+          <div class="row g-3">
+            <img src="assets/home_page/about1.png" alt="about1" class="col-12 rounded">
+            <img src="assets/home_page/about2.png" alt="about1" class="col-6 col-md-12 col-lg-6 rounded"/>
+            <img src="assets/home_page/about3.png" alt="about1" class="col-6 col-md-12 col-lg-6 rounded"/>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="row mt-3" id="food" data-aos="fade-down-right">
+      <p class="col-12 text-center styleText"> food category </p>
+      <h2 class="text-capitalize text-center bigText"> <span> ch</span>oose food item </h2>
+      <div class="col-12 d-flex flex-wrap flex-lg-nowrap justify-content-evenly mt-3">
+        <img src="assets/home_page/food_category1.png" alt="food1" style="width: 250px; height: 250px;" class="d-block m-2 img-fluid rounded"/>
+        <img src="assets/home_page/food_category2.png" alt="food2" style="width: 250px; height: 250px;" class="d-block m-2 img-fluid rounded"/>
+        <img src="assets/home_page/food_category3.png" alt="food3" style="width: 250px; height: 250px;" class="d-block m-2 img-fluid rounded"/>
+        <img src="assets/home_page/food_category4.png" alt="food4" style="width: 250px; height: 250px;" class="d-block m-2 img-fluid rounded"/>
+      </div>
+    </section>
+    <section class="row mt-3 whyChooseUs" id="whyChooseUs">
+      <div class="col-12 col-md-6 d-flex flex-column justify-content-center" data-aos="flip-left">
+        <div class="d-flex">
+          <img src="assets/home_page/why_choose_us1.png" alt="image1" class="img-fluid rounded img1"/>
+          <img src="assets/home_page/why_choose_us2.png" alt="image1" class="img-fluid rounded img2"/>
+        </div>
+        <div class="d-flex mt-2">
+          <img src="assets/home_page/why_choose_us3.png" alt="image1" class="img-fluid rounded img3"/>
+          <img src="assets/home_page/why_choose_us4.png" alt="image1" class="img-fluid rounded img4"/>
+          <div class="d-flex flex-column">
+            <img src="assets/home_page/why_choose_us5.png" alt="image1" class="img-fluid rounded img5"/>
+            <img src="assets/home_page/why_choose_us6.png" alt="image1" class="img-fluid rounded img6"/>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 mt-3">
+        <p class="styleText"> why choose us </p>
+        <h2 class="text-capitalize bigText"> <span> ex</span>tra ordinary taste and experienced </h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, elit augue urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.
+        </p>
+        <div class="col-12 col-md-8 col-lg-6 d-flex justify-content-evenly">
+          <img src="assets/home_page/Cookie.png" alt="cookie" style="background-color: #FF9F0D;" class="rounded p-2"/>
+          <img src="assets/home_page/Hamburger.png" alt="cookie" style="background-color: #FF9F0D;" class="rounded p-2"/>
+          <img src="assets/home_page/Wine.png" alt="cookie" style="background-color: #FF9F0D;" class="rounded p-2"/>
+        </div>
+        <div class="col-12 col-md-8 col-lg-6 bg-white rounded d-flex my-3" style="border-left: 5px solid #FF9F0D;">
+          <p class="h2 my-auto ms-2" style="color: #FF9F0D;"> 30+ </p>
+          <p class="text-dark text-center"> years of <span class="h3 text-capitalize"> experienced</span> </p>
+        </div>
+      </div>
+    </section>
+    <section class="row mt-3 bgClient py-3" data-aos="zoom-in-up">
+      <div class="col-12 d-flex flex-wrap flex-md-nowrap justify-content-center g-3">
+        <div class="m-2">
+          <img src="assets/home_page/chef_icon.png" alt="chef" class="">
+          <p class="text-center"> professional chefs</p>
+          <p class="text-center">420</p>
+        </div>
+        <div class="m-2">
+          <img src="assets/home_page/food_combo.png" alt="food" class="">
+          <p class="text-center"> items of food </p>
+          <p class="text-center">320</p>
+        </div>
+        <div class="m-2">
+          <img src="assets/home_page/spoon.png" alt="spoon" class="">
+          <p class="text-center">years of experienced</p>
+          <p class="text-center">30+</p>
+        </div>
+        <div class="m-2">
+          <img src="assets/home_page/pizza.png" alt="pizza" class="">
+          <p class="text-center">happy customers</p>
+          <p class="text-center">220</p>
+        </div>
+      </div>
+    </section>
+    <section class="row mt-3" id="menu">
+      <p class="text-center styleText"> choose & pick </p>
+      <h2 class="text-center text-capitalize mb-3 bigText"> <span>fr</span>om our menu</h2>
+      <div class="col-12 col-md-4 d-none d-lg-flex align-items-center" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+        <img src="assets/home_page/menu_pic2.png" alt="leaf" class="position-absolute" style="width: 400px;">
+        <img src="assets/home_page/menu_pic1.png" alt="plate" class="w-100 position-relative">
+      </div>
+      <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="3000">
+        <div class="d-flex">
+          <img src="assets/home_page/menu1.png" alt="menu1" class="d-block m-3">
+          <div>
+            <p class="h5 text-capitalize"> glow cheese </p>
+            <p> Lacus nisi , et ac dapibus veilt in </p>
+            <p class="h5" style="color: #FF9F0D;"> 12.55$ </p>
+          </div>
+        </div>
+        <div class="d-flex">
+          <img src="assets/home_page/menu2.png" alt="menu1" class="d-block m-3">
+          <div>
+            <p class="h5 text-capitalize"> italian pizza </p>
+            <p> Lacus nisi , et ac dapibus veilt in </p>
+            <p class="h5" style="color: #FF9F0D;"> 14.55$ </p>
+          </div>
+        </div>
+        <div class="d-flex">
+          <img src="assets/home_page/menu3.png" alt="menu1" class="d-block m-3">
+          <div>
+            <p class="h5 text-capitalize"> sllice beef </p>
+            <p> Lacus nisi , et ac dapibus veilt in </p>
+            <p class="h5" style="color: #FF9F0D;"> 12.4$ </p>
+          </div>
+        </div>
+        <div class="d-flex">
+          <img src="assets/home_page/menu4.png" alt="menu1" class="d-block m-3">
+          <div>
+            <p class="h5 text-capitalize"> mushaom pizza </p>
+            <p> Lacus nisi , et ac dapibus veilt in </p>
+            <p class="h5" style="color: #FF9F0D;"> 12.55$ </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+        <div class="d-flex">
+          <img src="assets/home_page/menu5.png" alt="menu1" class="d-block m-3">
+          <div>
+            <p class="h5 text-capitalize"> lettuce leaf </p>
+            <p> Lacus nisi , et ac dapibus veilt in </p>
+            <p class="h5" style="color: #FF9F0D;"> 12.5$ </p>
+          </div>
+        </div>
+        <div class="d-flex">
+          <img src="assets/home_page/menu6.png" alt="menu1" class="d-block m-3">
+          <div>
+            <p class="h5 text-capitalize"> fresh breakfast </p>
+            <p> Lacus nisi , et ac dapibus veilt in </p>
+            <p class="h5" style="color: #FF9F0D;"> 13.55$ </p>
+          </div>
+        </div>
+        <div class="d-flex">
+          <img src="assets/home_page/menu7.png" alt="menu1" class="d-block m-3">
+          <div>
+            <p class="h5 text-capitalize"> mild butter </p>
+            <p> Lacus nisi , et ac dapibus veilt in </p>
+            <p class="h5" style="color: #FF9F0D;"> 12.55$ </p>
+          </div>
+        </div>
+        <div class="d-flex">
+          <img src="assets/home_page/menu8.png" alt="menu1" class="d-block m-3">
+          <div>
+            <p class="h5 text-capitalize"> fresh bread </p>
+            <p> Lacus nisi , et ac dapibus veilt in </p>
+            <p class="h5" style="color: #FF9F0D;"> 12.55$ </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="row mt-3" id="chef">
+      <p class="col-12 text-center styleText"> chef </p>
+      <h2 class="col-12 text-center text-capitalize bigText"> <span> me</span>et out chefs </h2>
+      <div class="col-12 w-75 mx-auto d-flex flex-wrap flex-xl-nowrap justify-content-between">
+        <img src="assets/home_page/chef1.png" alt="chef" style="width: 200px;" class="rounded" data-aos="flip-up" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+        <img src="assets/home_page/chef2.png" alt="chef" style="width: 200px;" class="rounded" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+        <img src="assets/home_page/chef3.png" alt="chef" style="width: 200px;" class="rounded" data-aos="flip-down" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+        <img src="assets/home_page/chef4.png" alt="chef" style="width: 200px;" class="rounded" data-aos="flip-right" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+      </div>
+    </section>
+    <section class="row mt-3" id="testimonial">
+      <p class="styleText"> testimonials </p>
+      <h2 class="text-capitalize mb-5 bigText"> <span>wh</span>at our clients are saying </h2>
+      <div class="d-flex justify-content-center" data-aos="flip-left">
+        <img src="assets/home_page/testimonial_pic.png" alt="client" style="width: 100px; z-index: 100;" class="d-block position-absolute">
+        <div class="p-2 p-md-5 bg-white w-75 mx-auto rounded " style="top: 5rem; box-shadow: 0 0 30px 2px white;">
+          <img src="assets/home_page/Quotes.png" alt="quotes" class="d-block mx-auto ">
+          <p class="text-dark text-center"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit dicta adipisci nihil expedita nulla fugit corporis aliquid similique id assumenda nam dolorum dolores eveniet qui at soluta, odio repellendus placeat, porro aspernatur earum et recusandae. Praesentium inventore, blanditiis deserunt eos aspernatur rerum iusto id fugiat quae quo placeat quod ex. </p>
+          <p class="h3 text-center text-dark"> Mr.John Danial </p>
+        </div>
+      </div>
+    </section>
+    <section class="row  mt-5 py-2 bgProcess d-flex justify-content-end">
+      <div class="col-12 col-md-6" data-aos="fade-right">
+        <p class="styleText"> restaurant active process </p>
+        <h2 class="text-capitalize bigText"> <span>we</span> document every food bean process untill it is saved</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, elit augue urna, 
+        </p>
+        <p class="py-2 px-3 rounded text-white" style="border: 2px solid #FF9F0D; width: max-content;"> Learn More </p>
+      </div>
+    </section>
+    <section class="row mt-3" id="blog">
+      <p class="styleText text-center"> blog & post </p>
+      <h2 class="text-center text-capitalize bigText"> <span>la</span>test news & blogs </h2>
+      <div class="d-flex flex-wrap flex-lg-nowrap justify-content-center mt-3">
+        <div class="border border-white rounded pb-5 mb-2" style="width: max-content;">
+          <img src="assets/home_page/blog1.png" alt="blog" class="rounded d-block mb-3 mx-auto" style="width: 300px; height: 280px;">
+          <p style="color: #FF9F0D;" class="mx-4"> 10, february 2024 </p>
+          <p class="text-white  h5 mx-4" style="width: 300px;"> Pellentesque Non Efficitur Mi Aliquam Convallis Mi Quis </p>
+          <a href="" class="text-white mx-4"> Learn More </a>
+        </div>
+        <div class="border border-white rounded pb-5 mb-2" style="width: max-content;">
+          <img src="assets/home_page/blog2.png" alt="blog" class="rounded d-block mb-3 mx-auto" style="width: 300px; height: 280px;">
+          <p style="color: #FF9F0D;" class="mx-4"> 10, february 2024 </p>
+          <p class="text-white  h5 mx-4" style="width: 300px;"> Pellentesque Non Efficitur Mi Aliquam Convallis Mi Quis </p>
+          <a href="" class="text-white mx-4"> Learn More </a>
+        </div>
+        <div class="border border-white rounded pb-5 mb-2" style="width: max-content;">
+          <img src="assets/home_page/blog3.png" alt="blog" class="rounded d-block mb-3 mx-auto" style="width: 300px; height: 280px;">
+          <p style="color: #FF9F0D;" class="mx-4"> 10, february 2024 </p>
+          <p class="text-white h5 mx-4" style="width: 300px;"> Pellentesque Non Efficitur Mi Aliquam Convallis Mi Quis </p>
+          <a href="" class="text-white mx-4"> Learn More </a>
+        </div>
+      </div>
+    </section>
+    
+    <footer class="row mt-5" id="footer"> 
+      <section class="col-12 d-flex flex-column flex-md-row justify-content-evenly align-items-center" style="border-bottom: 2px solid #FF9F0D;">
+        <div>
+          <p class="text-capitalize bigText"> <span>st</span>ill you need our support? </p>
+          <p> Don’t wait make a smart & logical quote here. Its pretty easy. </p>
+        </div>
+        <div>
+          <input type="text" name="mail" id="mail" placeholder="Enter your email here..." class="text-white rounded my-3" style="background-color:#FF9F0D; ">
+          <button class="btn bg-white rounded" style="color: #FF9F0D;">subscribe  now</button>
+        </div>
+      </section>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
 </html>
